@@ -15,13 +15,13 @@ var app = express();
 
 //app mongoose
 var mongoose = require('mongoose');
-//mongoose.connect('mongodb://localhost:27017/jobber');
+//mongoose.connect('mongodb://root:root@172.25.66.197:27017/jobdb');
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect('mongodb://localhost:27017/jobber', (err) => { //connect to mangodb
+mongoose.connect('mongodb://root:root@172.25.66.197:27017/jobdb', (err) => { //connect to mangodb
     if(!err)
         console.log('MongoDB connection succeeded.');
     else 
