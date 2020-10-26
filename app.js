@@ -21,7 +21,9 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect('mongodb://root:root@172.25.66.197:27017/jobdb', (err) => { //connect to mangodb
+var url = 'mongodb+srv://dbjob:dbjob@cluster0.tmtyu.mongodb.net/Cluster0?retryWrites=true&w=majority';
+
+mongoose.connect(url, (err) => { //connect to mangodb
     if(!err)
         console.log('MongoDB connection succeeded.');
     else 
