@@ -9,6 +9,7 @@ app.use(cors({
   origin:'*'
 }))
 console.log(132132);
+alert(12);
 //npm start 
 var path = require('path');
 var cookieParser = require('cookie-parser');
