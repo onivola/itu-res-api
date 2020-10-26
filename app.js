@@ -1,6 +1,13 @@
 var createError = require('http-errors');
 var express = require('express'); //npm install express-generator -g //express --view=ejs resAPI //cd resAPI //npm install
 //npm i --save bcrypt mongoose cors jsonwebtoken
+// add cors
+var app = express();
+var cors = require('cors');
+app.use(cors({
+  //origin:'http://localhost:8100'
+  origin:'*'
+}))
 //npm start 
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -11,7 +18,7 @@ var usersRouter = require('./routes/users');
 var postersRouter = require('./routes/posters');
 var offreRouter = require('./routes/offres');
 
-var app = express();
+
 
 //app mongoose
 var mongoose = require('mongoose');
@@ -29,12 +36,7 @@ mongoose.connect(url, (err) => { //connect to mangodb
     else 
         console.log('Error in DB connection: ' + JSON.stringify(err,undefined,2));
 });
-// add cors
-var cors = require('cors');
-app.use(cors({
-  //origin:'http://localhost:8100'
-  origin:'*'
-}))
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
