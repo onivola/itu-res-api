@@ -8,6 +8,7 @@ app.use(cors({
   //origin:'http://localhost:8100'
   origin:'*'
 }))
+console.log(132132);
 //npm start 
 var path = require('path');
 var cookieParser = require('cookie-parser');
